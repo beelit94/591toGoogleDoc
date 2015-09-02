@@ -1,0 +1,4 @@
+
+cp $PWD/../../keys/chromeExtTestlinkHelper/key.pem $PWD/src/key.pem
+zip -r release.zip src
+rm -f src/key.pem

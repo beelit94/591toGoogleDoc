@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "591toGoogleSpreadSheet",
+  "version": "0.1.1",
+  "description": "This is to record the house you like and make an orginized list",
+  "icons": {
+    "128": "images/icon_175.png" 
+  },
+  "permissions": [
+  	"tabs",
+    "storage",
+    "webNavigation",
+    "clipboardWrite"
+  ],
+  
+  "content_scripts": [
+   {
+      "matches": [
+        "http://www.591.com.tw/*",
+        "http://rent.591.com.tw/*"
+      ],
+      "js": ["lib/jquery-2.1.1.min.js", "content/fivenineone.js"],
+      "all_frames": true
+   }
+  ],
+
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon_19.png",
+      "38": "images/icon_38.png"
+    },
+    "default_popup": "popup/popup.html"
+  },
+
+  "web_accessible_resources": [
+    "centralSite.json"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
